@@ -4,20 +4,19 @@ fun main() {
     println(getLarge(1, *array))
 }
 
-fun getSum(vararg numbers: Int): Int {
+private fun getSum(vararg numbers: Int): Int {
     var sum = 0
     for (number in numbers)
         sum += number
     return sum
 }
 
-fun getLarge(a: Int, vararg numbers: Int): Int {
-    var array = intArrayOf(*numbers)
-    var l = a;
+private fun getLarge(a: Int, vararg numbers: Int): Int {
+    val array = intArrayOf(*numbers)
+    var l = a
     var L = array.size
     --L
-    for (i:Int in 0..L)
-    {
+    for (i: Int in 0..L) {
         if (array[i] > l)
             l = array[i]
     }
